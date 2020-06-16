@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+Error!
+
+{% endblock %}
+
+{% block body %}
+
+<nav class="navbar" style="background-color: #9db2f2; border-bottom: 5px solid white;">
+  <div class="navbar-brand" style="font-size: 30px; color: white;">
+    <img title="Twink logo" src="https://docs.google.com/drawings/d/e/2PACX-1vSr06A_c1Q_nQR9SwWGbE-hiq35zPxOwud1rlb7lC3550bcGYQ096iZq6yGvkGKg6Xy0NQYQChK1yx5/pub?w=1440&h=1080" width="55" height="45" class="d-inline-block align-top" style="font-weight: bold;">
+    Twink!
+  </div>
+</nav>
+
+<h1 class="text-blue center" style="color: orange;">{{ header }}</h1>
+
+<h3 class="bg-blue center">{{ message }}</h3>
+
+<form class="text-blue center" style="width: 25%; margin-left: 37.5%; border-radius: 5px;" action="{{ url_for('error') }}">
+
+  <button type="submit" class="btn btn-primary btn-block">Try Again</button>
+
+</form>
+
+{% endblock %}
