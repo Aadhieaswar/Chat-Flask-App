@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
 
-  socket.on('connect', () => { /* funtion to trigger when the socket connects */
+  socket.on('connect', () => { /* function to trigger when the socket connects */
 
     socket.emit('get username');
 
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
       var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
       const word = template({'content': text, 'user0': user0, 'date': date, 'time': time});
       document.querySelector('#form1').reset();
-      socket.emit('msg recieved', {'content': text, 'user0': user0, 'date': date, 'time': time, 'word': word});
+      socket.emit('msg received', {'content': text, 'user0': user0, 'date': date, 'time': time, 'word': word});
     });
 
     document.querySelector('.send0').onclick = () => {

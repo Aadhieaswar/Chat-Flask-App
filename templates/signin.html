@@ -9,14 +9,14 @@ Twink!
 {% block body %}
 <nav class="navbar" style="background-color: #9db2f2; border-bottom: 5px solid white;">
   <div class="navbar-brand" style="font-size: 30px; color: white;">
-    <img title="Twink logo" src="https://docs.google.com/drawings/d/e/2PACX-1vSr06A_c1Q_nQR9SwWGbE-hiq35zPxOwud1rlb7lC3550bcGYQ096iZq6yGvkGKg6Xy0NQYQChK1yx5/pub?w=1440&h=1080" width="55" height="45" class="d-inline-block align-top" style="font-weight: bold;">
+    <img title="Twink logo" alt="Twink Logo" src="https://docs.google.com/drawings/d/e/2PACX-1vSr06A_c1Q_nQR9SwWGbE-hiq35zPxOwud1rlb7lC3550bcGYQ096iZq6yGvkGKg6Xy0NQYQChK1yx5/pub?w=1440&h=1080" width="55" height="45" class="d-inline-block align-top" style="font-weight: bold;">
     Twink!
   </div>
 </nav>
 
 <h1 class="bg-blue center" style="color: orange;">Welcome to Twink!</h1>
 
-<form class="center" action="{{ url_for('signin') }}" method="post" style="width: 30%; margin-left: 35%;">
+<form class="center" action="{{ url_for('signin') }}" method="post" style="width: 30%; margin: 0 auto;">
 
   <div class="bg-blue" style="font-size: 30px;">Username:</div>
   <input type="text" class="form-control length" name="username" placeholder="Enter Username Here">

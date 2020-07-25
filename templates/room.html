@@ -32,9 +32,9 @@ Twink!
 <h1 class="bg-blue center" style="color: orange;">Twink! Welcomes you to Channel: {{ session.current_room }}!</h1>
 
 <nav class="navbar navbar-light length" id="roomName" style="border-top-left-radius: 5px; border-top-right-radius: 5px; height: 40px; margin-bottom: 0px; background-color: #9e9fe8; border: 2px solid white; border-bottom: 0px; font-weight: bold; color: white;">{{ session.current_room }}</nav>
-<div class="slider alert-info length" style="position: relative; height: 450px; overflow-y: scroll; margin-top: 0px;">
+<div class="slider alert-info length" style="position: relative; height: 450px; overflow-y: auto; margin-top: 0px;">
 <div data-spy="scroll" data-offset="0" class="scrollspy-example">
-  <div id="msg-box" style="width: 95%; margin-left: 2.5%; margin-top: 10px; margin-bottom: 50px;">
+  <div id="msg-box" style="width: 95%; margin: 0 auto; margin-top: 10px; margin-bottom: 50px;">
 {% if messages is not none %}
 {% for msgs in messages %}
 <div class="card" style="width: 100%; padding: 10px; margin-top: 5px;">
@@ -54,13 +54,13 @@ Twink!
 <form class="bg-blue length" id="form1" style="display: flex; margin-bottom: 20px; margin-top: 1%;">
 
 <div class="input-group">
-  <textarea name="msg" form="form1" class="typearea form-control" rows="4" cols="80" placeholder="Message"></textarea>
-<div class="input-group-append">
-<span class="input-group-text" style="display: flex; flex-wrap: wrap;">
-  <button type="reset" class="send" name="send" title="Send"></button>
-  <a type="submit" class="btn btn-sm send0" title="Exit Room" href="{{ url_for('index') }}"></a>
-</span>
-</div>
+  <textarea name="msg" form="form1" class="typearea form-control" rows="4" cols="80" placeholder="Message" style="resize: none"></textarea>
+  <div class="input-group-append">
+    <span class="input-group-text" style="display: flex; flex-wrap: wrap;">
+      <button type="reset" class="send" name="send" title="Send"></button>
+      <a type="submit" class="btn btn-sm send0" title="Exit Room" href="{{ url_for('index') }}"></a>
+    </span>
+  </div>
 </div>
 
 </form>

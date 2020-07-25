@@ -150,7 +150,7 @@ def join(data):
 
     emit("joined room", {'join': data, 'room': room}, room=room)
 
-@socketio.on("msg recieved")
+@socketio.on("msg received")
 def msg(data):
     msg0 = {'user': data["user0"],'content': data["content"],'date': data["date"],'time': data["time"]}
     msg1 = data["word"]
