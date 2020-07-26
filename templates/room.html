@@ -12,6 +12,12 @@ Twink!
 
 {% block body %}
 
+<script>
+
+const username = '{{ session.user }}'
+
+</script>
+
 <script src="{{ url_for('static', filename='index.js') }}"></script>
 
 <nav class="navbar" style="background-color: #9db2f2; border-bottom: 5px solid white; display: flex;">
