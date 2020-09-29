@@ -12,8 +12,8 @@ if (localStorage.getItem('current_room')) {
 window.onload = () => {
 
   document.querySelector('#logout').onclick = () => {
-  localStorage.removeItem('current_room');
-  localStorage.removeItem('username');
+    localStorage.removeItem('current_room');
+    localStorage.removeItem('username');
   }
 }
 </script>
@@ -31,23 +31,23 @@ Twink!
 <nav class="navbar" style="background-color: #9db2f2; border-bottom: 5px solid white; display: flex;">
   <div class="navbar-brand" style="font-size: 30px; color: white; display: flex;">
     <img title="Twink logo" src="https://docs.google.com/drawings/d/e/2PACX-1vSr06A_c1Q_nQR9SwWGbE-hiq35zPxOwud1rlb7lC3550bcGYQ096iZq6yGvkGKg6Xy0NQYQChK1yx5/pub?w=1440&h=1080" width="55" height="45" class="d-inline-block align-top" style="font-weight: bold;">
-      Twink!
-      </div>
-    <div style="display: flex; margin-left: 20%; position: relative; font-size: 30px;">
-      <div title="{{ handle }}" style="color: white; font-weight: bold; margin-right: 10px;">
-        {{ handle }}
-      </div>
-  <a title="Click to LogOut" class="badge badge-info" id="logout" href="{{ url_for('logout') }}" style="padding: 10px; color: white;">
+    Twink!
+  </div>
+  <div style="display: flex; margin-left: 20%; position: relative; font-size: 30px;">
+    <div title="{{ handle }}" style="color: white; font-weight: bold; margin-right: 10px;">
+      {{ handle }}
+    </div>
+    <a title="Click to LogOut" class="badge badge-info" id="logout" href="{{ url_for('logout') }}" style="padding: 10px; color: white;">
     LogOut
-  </a>
-</div>
+    </a>
+  </div>
 </nav>
 
-<h1 class="bg-blue center" style="color: orange;">Create or Join Chat Rooms in Twink!</h1>
+<h1 class="bg-blue center welcome-title" style="color: orange;">Create or Join Chat Rooms in Twink!</h1>
 <p></p>
 <p></p>
 <div class="bg-blue center" style="font-size: 30px;">Create new chat room:</div>
-<form class="bg-blue center" id="form0" action="{{ url_for('rooms') }}" method="post">
+<form class="bg-blue center" id="form0" action="{{ url_for('rooms') }}" method="post" autocomplete="off">
   <div class="length" style="display: flex;">
   <input type="text" class="form-control room" placeholder="Chat Room" name="input">
   <button type="submit" class="btn btn-primary btn-block" id="press" title="Create Room" style="margin-left: 5px; width: 20%">Create</button>

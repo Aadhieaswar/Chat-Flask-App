@@ -2,10 +2,9 @@
 <html>
 
 <head>
-    {% block head %} {% endblock %}
+  {% block head %} {% endblock %}
 
-    <title>{% block title %} {% endblock %}</title>
-
+  <title>{% block title %} {% endblock %}</title>
 </head>
 
 <meta charset="utf-8">
@@ -17,146 +16,16 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
-<style media="screen">
-    .bg-blue {
-        background-color: #2f4791;
-        color: white;
-    }
-    
-    html {
-        height: 100%;
-    }
-    
-    body {
-        background-color: #2f4791;
-        height: 100%;
-    }
-    
-    body main {
-        height: 100%;
-        margin-bottom: 200px;
-    }
-    
-    .center {
-        text-align: center;
-    }
-    
-    .text-blue {
-        background-color: white;
-        color: #2f4791;
-    }
-    
-    .length {
-        width: 80%;
-        margin: 0 auto;
-        margin-top: 10px;
-    }
-    
-    .list0 {
-        list-style-type: none;
-        display: flex;
-    }
-    
-    .slider {
-        border: 2px solid white;
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
-    }
-    
-    .typearea {
-        margin: 0;
-        left: 0;
-        bottom: 0;
-        margin-bottom: 0.5%;
-    }
-    
-    .send,
-    .send0 {
-        margin-top: 0;
-        width: 90%;
-        margin-left: 5%;
-        border-radius: 5px;
-        background-color: white;
-        margin-right: 0px;
-        border: 2px solid #9db2f2;
-    }
-    
-    .send::before {
-        content: "\27A4";
-        font-size: 30px;
-        color: #9db2f2;
-    }
-    
-    .send:hover {
-        background-color: #9db2f2;
-        transform: scale(1.05);
-    }
-    
-    .send:hover:before {
-        color: white;
-    }
-    
-    .send0:hover {
-        background-color: #fa575d;
-        transform: scale(1.05);
-    }
-    
-    .send0:hover:before {
-        color: white;
-    }
-    
-    .right {
-        width: 100%;
-        text-align: right;
-    }
-    
-    .plus-sign::before {
-        content: "\002B";
-        font-size: 26px;
-        font-weight: bold;
-        padding: 12px;
-    }
-    
-    .send0 {
-        margin-top: 20%;
-        border: 2px solid #fa575d;
-        width: 90%;
-        padding: 0px;
-    }
-    
-    .send0::before {
-        content: "\2715";
-        font-size: 29px;
-        font-weight: bold;
-        color: #fa575d;
-    }
-    
-    footer {
-        position: relative;
-        height: 100px;
-        margin-top: -100px;
-        width: 100%;
-        background-color: white;
-        color: #9db2f2;
-        text-align: center;
-        border-top: 5px solid #9db2f2;
-    }
-    
-    @media screen and (max-width: 660px) {
-        body {
-            overflow-y: scroll;
-        }
-    }
-</style>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></link>
 
 <body>
-    <main>
-        {% block body %} {% endblock %}
-    </main>
+  <main>
+    {% block body %} {% endblock %}
+  </main>
 </body>
 
 <footer>
-    <h4>&copy Aadhieaswar Senthil Kumar</h4>
+  <h4>&copy Aadhieaswar Senthil Kumar</h4>
 </footer>
 
 </html>
