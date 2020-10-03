@@ -3,7 +3,6 @@
 {% block head %}
 
 <script>
-
 if (localStorage.getItem('current_room')) {
   let name = localStorage.getItem('current_room');
   window.location.replace('/room/' + name);
@@ -54,8 +53,8 @@ Twink!
  </div>
   <small id="userHelp" style="display: default; color: white;" class="form-text">Create your own chat room</small>
 </form>
-<p></p>
-<p></p>
+<br>
+<br>
 <div class="bg-blue center" style="font-size: 30px;">Join existing chat room:</div>
 <form class="bg-blue center" action="{{ url_for('open0') }}" method="POST">
 
