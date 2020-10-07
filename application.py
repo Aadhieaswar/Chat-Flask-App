@@ -9,12 +9,15 @@ app.config["SECRET_KEY"] = "my secret key" #os.getenv("SECRET_KEY")
 socketio = SocketIO(app)
 app.debug = True
 
+# array storing the list of Chat Rooms
 Crooms = []
 
+# array storing the list of logged in users
 users = []
 
 roomMsgs = dict()
 
+# appends the default chat room
 Crooms.append("Main")
 
 @app.route("/")
@@ -86,13 +89,10 @@ def rooms():
 def open0():
 
     if request.method == "POST":
-
         page = request.form.get("pages")
-
         page = page.capitalize()
 
         session["current_room"] = page
-
         return redirect(f"/room/{page}")
 
 @app.route("/room/<string:name>", methods=['POST', 'GET'])
