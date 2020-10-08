@@ -17,11 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   socket.on('connect', () => { /* function to trigger when the socket connects */
 
-    socket.emit('get username');
-
-    const enter = template1({'user0': localStorage.getItem('username')});
-
-    socket.emit('joined', enter);
+    socket.emit('joined');
 
     document.querySelector('.slider').scrollTop = document.querySelector(".slider").scrollHeight;
 
@@ -60,18 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  socket.on('username sent', data => {
-
-    if (!localStorage.getItem('username')) {
-      localStorage.setItem('username', data);
-    }
-  });
-
   socket.on('joined room', data => {
 
-    const join = data['join'];
+    if (!localStorage.getItem('username'))
+      localStorage.setItem('username', data['user']);
+    const enter = template1({'user0': localStorage.getItem('username')});
     localStorage.setItem('current_room', data['room']);
-    document.querySelector('#msg-box').innerHTML += join;
+    document.querySelector('#msg-box').innerHTML += enter;
     document.querySelector('.slider').scrollTop = document.querySelector('.slider').scrollHeight;
   });
 

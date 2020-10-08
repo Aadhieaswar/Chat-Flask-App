@@ -132,24 +132,14 @@ def error():
 
     return redirect("/")
 
-@socketio.on("get username")
-def username():
-
-    if(session.get("username")):
-        user0 = session["username"]
-    else:
-        user0 = None
-
-    emit("username sent", user0, broadcast=True)
-
 @socketio.on("joined", namespace='/')
-def join(data):
+def join():
 
     room = session.get("current_room")
 
     join_room(room)
 
-    emit("joined room", {'join': data, 'room': room}, room=room)
+    emit("joined room", {'user': session["username"], 'room': room}, room=room)
 
 @socketio.on("msg received")
 def msg(data):
