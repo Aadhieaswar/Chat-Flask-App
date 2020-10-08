@@ -7,7 +7,8 @@ from collections import deque
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "my secret key" #os.getenv("SECRET_KEY")
 socketio = SocketIO(app)
-app.debug = True
+
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0 # disable caching
 
 # array storing the list of Chat Rooms
 Crooms = []
@@ -167,8 +168,11 @@ def msg(data):
 @socketio.on("left", namespace='/')
 def left(data):
 
-    room = session.get("current_room")
+    room = session["current_room"]
 
     leave_room(room)
 
     emit("left room", data, room=room)
+
+if __name__ == "__main__":
+    app()
