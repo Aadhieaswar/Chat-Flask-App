@@ -165,4 +165,4 @@ def left(data):
     emit("left room", data, room=room)
 
 if __name__ == "__main__":
-    app()
+    app.run()
