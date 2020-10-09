@@ -5,7 +5,7 @@ from flask_socketio import SocketIO, emit, join_room, leave_room
 from collections import deque
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = "my secret key" #os.getenv("SECRET_KEY")
+app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 socketio = SocketIO(app)
 
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0 # disable caching
